@@ -380,6 +380,7 @@ input, select, textarea { font: inherit; color: inherit; }
   width: 28px;
   padding: 4px 0;
   z-index: 1001;
+  flex: 0 0 28px;
 }
 #menu-toggle span {
   display: block;
@@ -1638,7 +1639,7 @@ input, select, textarea { font: inherit; color: inherit; }
     margin-right: 12px;
   }
   .nav-mobile-btn {
-    padding: 7px 14px;
+    padding: 8px 14px;
     font-size: 0.65rem;
     font-weight: 600;
     border-radius: 100px;
@@ -1648,28 +1649,25 @@ input, select, textarea { font: inherit; color: inherit; }
     align-items: center;
     gap: 6px;
   }
-  .nav-mobile-btn.btn-primary {
+  .nav-mobile-ctas a:last-child { display: none; }
+
+  .nav-mobile-btn.btn-pricing {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: var(--cream);
     backdrop-filter: blur(10px);
   }
-  .nav-mobile-btn.btn-outline-gold {
-    padding: 7px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: var(--cream);
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  #navbar.scrolled .nav-mobile-btn.btn-primary {
+  #navbar.scrolled .nav-mobile-btn.btn-pricing {
     background: var(--olive);
     border-color: var(--olive);
     color: var(--cream);
   }
-  #navbar.scrolled .nav-mobile-btn.btn-outline-gold {
-    border-color: var(--tan);
-    color: var(--charcoal);
-    background: rgba(139, 126, 106, 0.08);
+  .mobile-menu-inner .mobile-whatsapp {
+    margin-top: -8px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--olive);
+    opacity: 1;
   }
 
   .hero-actions { display: none; }
@@ -1732,4 +1730,11 @@ input, select, textarea { font: inherit; color: inherit; }
   .booking-info { text-align: left; }
   .booking-mobile-cta { margin: 16px auto 0; }
   .booking-right { width: 100%; }
+}
+
+@media (max-width: 390px) {
+  .nav-logo { font-size: 1.35rem; }
+  .nav-inner { padding: 0 14px; }
+  .nav-mobile-ctas { margin-right: 10px; }
+  .nav-mobile-btn { padding: 7px 11px; }
 }

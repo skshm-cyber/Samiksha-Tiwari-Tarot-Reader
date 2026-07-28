@@ -224,9 +224,11 @@ function initNavigation() {
 
   // Mobile menu
   menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    const isOpen = mobileMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   // Close mobile menu on link click
@@ -234,8 +236,16 @@ function initNavigation() {
     link.addEventListener('click', () => {
       menuToggle.classList.remove('active');
       mobileMenu.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
     });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      menuToggle.click();
+    }
   });
 
   // Smooth scroll for all nav links
