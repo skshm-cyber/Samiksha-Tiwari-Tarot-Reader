@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samiksha Tiwari — Tarot Reader & Spiritual Guide</title>
+  <meta name="description" content="Premium tarot readings for love, career, spiritual healing, and life direction. Book your session today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ INTRO OVERLAY ═══════════════════════════════════ -->
+  <div id="intro-overlay">
+    <div class="intro-bg">
+      <div class="intro-grain"></div>
+      <div class="intro-particles" id="intro-particles"></div>
+      <div class="intro-candle-glow"></div>
+    </div>
+    <div class="intro-content">
+      <p class="intro-quote">
+        <span class="intro-line">Every answer</span>
+        <span class="intro-line">already exists.</span>
+        <span class="intro-line accent">Let's uncover yours.</span>
+      </p>
+    </div>
+    <div class="intro-footer">
+      <button id="sound-toggle" class="sound-btn" aria-label="Toggle ambient sound">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path class="sound-wave" d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
+        </svg>
+        <span>Ambient Sound</span>
+      </button>
+      <div class="intro-progress">
+        <div class="intro-progress-bar" id="intro-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ NAVIGATION ══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">tarotuniverse._<span class="gold"></span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" data-nav>About</a>
+        <a href="#services" data-nav>Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#process" data-nav>Process</a>
+        <a href="#testimonials" data-nav>Reviews</a>
+        <a href="#faq" data-nav>FAQ</a>
+      </div>
+      <a href="#booking" class="nav-cta" data-nav>Book a Reading</a>
+      <div class="nav-mobile-ctas">
+        <a href="#booking" class="nav-mobile-btn btn-primary" data-nav>Book a Reading</a>
+        <a href="https://wa.me/917453895770" target="_blank" class="nav-mobile-btn btn-outline-gold">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Me
+        </a>
+      </div>
+      <button id="menu-toggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ MOBILE MENU ═════════════════════════════════════ -->
+  <div id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#about" data-mobile-nav>About</a>
+      <a href="#services" data-mobile-nav>Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="#process" data-mobile-nav>Process</a>
+      <a href="#testimonials" data-mobile-nav>Reviews</a>
+      <a href="#faq" data-mobile-nav>FAQ</a>
+      <a href="#booking" data-mobile-nav class="mobile-cta">Book a Reading</a>
+    </div>
+  </div>
+
+  <main id="smooth-content">
+
+    <!-- ═══ HERO ═══════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-label">Tarot Reader &amp; Spiritual Guide</p>
+          <h1 class="hero-title">
+            <span class="h-line">Helping You Find</span>
+            <span class="h-line"><em>Clarity,</em></span>
+            <span class="h-line"><em>Healing</em> &amp;</span>
+            <span class="h-line"><em>Direction</em></span>
+          </h1>
+          <p class="hero-text">Through intuitive tarot guidance, I help people understand love, career, relationships, life purpose, and spiritual growth.</p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn-primary">Book a Reading</a>
+            <a href="https://wa.me/917453895770" target="_blank" class="btn-outline-gold">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Me
+            </a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="tarot-composition" id="tarot-composition">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+            <div class="moon-particles" id="moon-particles"></div>
+            <div class="tarot-card card-1">
+              <div class="card-face">
+                <div class="card-inner">
+                  <span class="card-num">0</span>
+                  <span class="card-name">The Fool</span>
+                </div>
+              </div>
+            </div>
+            <div class="tarot-card card-2">
+              <div class="card-face">
+                <div class="card-inner">
+                  <span class="card-num">I</span>
+                  <span class="card-name">The Magician</span>
+                </div>
+              </div>
+            </div>
+            <div class="tarot-card card-3">
+              <div class="card-face">
+                <div class="card-inner">
+                  <span class="card-num">XIV</span>
+                  <span class="card-name">Temperance</span>
+                </div>
+              </div>
+            </div>
+            <div class="tarot-card card-4">
+              <div class="card-face">
+                <div class="card-inner">
+                  <span class="card-num">XVIII</span>
+                  <span class="card-name">The Moon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══════════════════════════════════════ -->
+    <section id="services">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-label">Services</p>
+          <h2 class="section-title">Why people <em>come to me</em></h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card" data-service>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <span class="service-num">01</span>
+            <h3>Love &amp; Relationships</h3>
+            <p>Gain clarity on your romantic life, understand relationship dynamics, and find the guidance you need for matters of the heart.</p>
+            <span class="service-arrow">&rarr;</span>
+          </div>
+          <div class="service-card" data-service>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+            <span class="service-num">02</span>
+            <h3>Career Guidance</h3>
+            <p>Navigate career transitions, find your professional purpose, and discover the path aligned with your highest potential.</p>
+            <span class="service-arrow">&rarr;</span>
+          </div>
+          <div class="service-card" data-service>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </div>
+            <span class="service-num">03</span>
+            <h3>Spiritual Healing</h3>
+            <p>Reconnect with your inner self, heal emotional wounds, and embark on a journey of spiritual awakening and growth.</p>
+            <span class="service-arrow">&rarr;</span>
+          </div>
+          <div class="service-card" data-service>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="service-num">04</span>
+            <h3>Life Direction</h3>
+            <p>Find clarity during uncertain times. Understand your life's purpose and the next steps on your unique journey.</p>
+            <span class="service-arrow">&rarr;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT ══════════════════════════════════════════ -->
+    <section id="about">
+      <div class="section-container about-layout">
+        <div class="about-image-wrap" data-reveal-left>
+          <div class="about-image-mask">
+            <img src="Samiksha%20Tiwari%20Tarot%20Reader.jpeg" alt="Samiksha Tiwari - Tarot Reader" class="about-image" />
+          </div>
+          <div class="about-image-accent"></div>
+        </div>
+        <div class="about-content" data-reveal-right>
+          <p class="section-label">About</p>
+          <h2 class="section-title">A guide, not a fortune teller</h2>
+          <p class="about-text">Welcome to tarotuniverse._ &mdash; a safe and welcoming space where your questions are met with care, compassion, and understanding.</p>
+          <p class="about-text">Every reading is more than a service, it's an experience. Thoughtfully crafted and intuitively guided, each reading is designed to bring clarity, comfort, and meaningful insight. From the moment you book until your reading is delivered, every detail is handled with intention, creating a calm, supportive, and deeply personal experience.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="stat-num">2k+</span>
+              <span class="stat-label">Readings Delivered</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-num">98%</span>
+              <span class="stat-label">Positive Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROCESS ════════════════════════════════════════ -->
+    <section id="process">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-label">How It Works</p>
+          <h2 class="section-title">My <em>process</em></h2>
+        </div>
+        <div class="process-timeline">
+          <div class="process-line" id="process-line"></div>
+          <div class="process-step" data-step>
+            <div class="step-marker">
+              <div class="step-dot"></div>
+              <span class="step-num">01</span>
+            </div>
+            <div class="step-content">
+              <h3>Reserve</h3>
+              <p>Choose the reading that resonates with you and reserve your session.</p>
+            </div>
+          </div>
+          <div class="process-step" data-step>
+            <div class="step-marker">
+              <div class="step-dot"></div>
+              <span class="step-num">02</span>
+            </div>
+            <div class="step-content">
+              <h3>Connect</h3>
+              <p>After your booking is confirmed, I'll personally reach out to you to discuss your reading. You'll have the opportunity to share your question, situation, or the guidance you're seeking before I begin.</p>
+            </div>
+          </div>
+          <div class="process-step" data-step>
+            <div class="step-marker">
+              <div class="step-dot"></div>
+              <span class="step-num">03</span>
+            </div>
+            <div class="step-content">
+              <h3>Receive</h3>
+              <p>Your reading is intuitively prepared with care, thoughtfully recorded just for you, and delivered within the promised timeframe.</p>
+            </div>
+          </div>
+          <div class="process-step" data-step>
+            <div class="step-marker">
+              <div class="step-dot"></div>
+              <span class="step-num">04</span>
+            </div>
+            <div class="step-content">
+              <h3>Reflect</h3>
+              <p>Take your time with your reading. Revisit it whenever you need clarity — the messages often unfold in new ways as your journey continues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTIMONIALS ═══════════════════════════════════ -->
+    <section id="testimonials">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-label">Client Experiences</p>
+          <h2 class="section-title">Words that <em>matter</em></h2>
+        </div>
+        <div class="testimonials-track" id="testimonials-track">
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Oh my god your readings are always so accurate, I am literally in tears right now 😭❤️ Thank you so much, I'll book another session soon 🥹"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div><strong>Anonymous</strong><span>Mumbai</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"OH MY GOD WHO ARE YOU? YOU'RE LITERALLY MAGICAL! Yesterday you told me that I will feel lonely today and will spend my day alone — and guess what, all my friends bunked the classes today and I felt so alone 😭😭 I'll book another session too please!!!!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">P</div>
+              <div><strong>Anonymous</strong><span>Delhi</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"HEYYYY I HAVE AN UPDATE ON THE READING YOU DID FOR ME — I GOT THE JOB!!!!! 🎉 Thank you so much for the motivation and guidance, I will send a box of sweets to you if I could ❤️"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div><strong>Anonymous</strong><span>Bangalore</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"I really appreciate the time and dedication you put into every reading — they always resonate a lot. IM STILL SHOCKED about that detail you gave me about the fragrance, like what the hell 😂✨ You're also very sweet and gentle, I really really appreciate you."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div><strong>Anonymous</strong><span>Toronto</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"You were so right about him coming back into my life!! I was so hopeless about this relationship — yesterday he called me and asked me if we can date again!! 😭❤️ Thank you so much, you're literally a gem."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div><strong>Anonymous</strong><span>Berlin</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Hey! I am blown away by your reading. Seriously. You predicted that I will find it out on 16th November — and look at the date today. 16th NOVEMBER! THIS IS INSANITY! 🤯"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">K</div>
+              <div><strong>Anonymous</strong><span>New York</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Hey Samiksha, I just wanted to thank you for doing this reading for me. Your reading was very very accurate and you understood my situation and guided me — be it relationship advice or career. I feel like I know how to navigate my situation. What you said resonated ❤️✨"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">T</div>
+              <div><strong>Anonymous</strong><span>London</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Damn the Celtic Cross reading is so accurate, it's so resonating. You told me the things that I have been ignoring and I should be realising. It's really great to get such clearance from a third perspective 😭❤️"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">I</div>
+              <div><strong>Anonymous</strong><span>Dubai</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Heyyy I'm really very very thankful to you — whatever you told turned out to be completely true. Your tarot reading skills are so good... at first I didn't believe but when everything happened as you said I was so surprised 🫶🫶🫶"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">D</div>
+              <div><strong>Anonymous</strong><span>Singapore</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"This was my 1st Celtic Cross reading from you and it was amazing — you literally solved all my doubts and I feel so relieved now 🥹 Trust me you're one of the best tarot readers I have ever found 🫶"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">N</div>
+              <div><strong>Anonymous</strong><span>Sydney</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ════════════════════════════════════════════ -->
+    <section id="faq">
+      <div class="section-container faq-layout">
+        <div class="faq-left">
+          <p class="section-label">FAQ</p>
+          <h2 class="section-title">Common <em>questions</em></h2>
+        </div>
+                <div class="faq-right">
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I choose the right reading?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Each reading is designed to offer guidance in a different way. If you're unsure which one is right for you, simply choose the experience that feels most aligned with what you're seeking. If you need a little help deciding, you're always welcome to reach out before reserving your reading.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>What if I don't have a specific question?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>That's completely okay. You don't need to have everything figured out before your reading. You can come with a feeling, an intention, or simply a desire for clarity. We'll explore the energy together.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>What happens after I reserve my reading?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Once your booking is confirmed, I'll personally reach out to you within 10&ndash;12 hours (or within 1 hour for Urgent Readings). We'll discuss your question, intention, and everything I need to know before I begin preparing your reading.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>How will I receive my reading?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Your reading will be delivered as a series of personalized voice notes, thoughtfully recorded just for you. This allows me to explain each card in depth, share the messages I receive intuitively, and guide you through your reading in a warm, personal way.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>How long does it take to receive my reading?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>The delivery timeframe depends on the type of reading you've booked and my current schedule. Once your booking is confirmed and we've discussed your reading, I'll let you know the estimated delivery time before I begin.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I ask follow-up questions?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If you'd like further clarity after receiving your reading, follow-up questions can be booked separately.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Are tarot readings guaranteed to predict the future?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Tarot is a tool for guidance, reflection, and insight. It highlights the energies surrounding your situation and the possibilities ahead, but your choices and free will always play an important role in shaping your path.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>What information do I need to provide?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>I'll only ask for the information needed to complete your reading. You don't need to provide personal details unless they're relevant to your chosen reading.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I book a reading for someone else?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, as long as they're comfortable receiving the reading and understand that it's being booked on their behalf.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Will my reading remain private?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Everything you share with me is treated with complete confidentiality and respect. Your privacy is always honoured.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you offer refunds?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Because every reading is prepared personally and requires dedicated time and energy, completed readings are non-refundable. If you have any concerns before your reading begins, please don't hesitate to get in touch.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I cancel or reschedule my booking?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>If you need to make changes to your booking, please contact me before I've started working on your reading. Once preparation has begun, cancellations or rescheduling may no longer be possible.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>What topics can I ask about?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Readings can offer guidance on many areas of life, including:</p>
+              <ul>
+                <li>Love &amp; Relationships</li>
+                <li>Career &amp; Finances</li>
+                <li>Personal Growth</li>
+                <li>Spiritual Guidance</li>
+                <li>Family &amp; Friendships</li>
+                <li>Life Decisions</li>
+                <li>Self-Discovery</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>Are there any topics you don't read on?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>To ensure readings remain ethical and responsible, I don't provide guidance on:</p>
+              <ul>
+                <li>Medical diagnoses or treatments</li>
+                <li>Legal matters or court outcomes</li>
+                <li>Pregnancy or fertility predictions</li>
+                <li>Gambling, lottery numbers, or financial speculation</li>
+                <li>Invading another person's privacy or reading without their consent</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>How often should I book a reading?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>There isn't a right or wrong schedule. Some people book whenever they need clarity during an important moment, while others enjoy monthly readings to stay connected with the energies ahead. Follow what feels right for you.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-faq>
+            <button class="faq-question" aria-expanded="false">
+              <span>What if the reading isn't what I expected?</span>
+              <div class="faq-icon"><span></span><span></span></div>
+            </button>
+            <div class="faq-answer">
+              <p>Tarot isn't about telling us only what we'd like to hear &mdash; it's about offering honest guidance and a fresh perspective. Sometimes the messages make immediate sense, while other times they reveal their meaning as situations unfold. Give yourself time to reflect, and revisit your reading whenever you feel called to.</p>
+            </div>
+          </div>
+          <div class="faq-contact">
+            <p class="faq-contact-text">Still have a question? If you didn't find the answer you were looking for, I'd be happy to help.</p>
+            <a href="https://wa.me/917453895770" target="_blank" class="btn-primary">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BOOKING ════════════════════════════════════════ -->
+    <section id="booking">
+      <div class="section-container booking-layout">
+        <div class="booking-left">
+          <p class="section-label">Book a Reading</p>
+          <h2 class="section-title">Your journey <em>begins here</em></h2>
+          <p class="booking-subtitle">Available for returning clients only</p>
+          <p class="booking-text">Fill out the form and I'll get back to you within 24 hours to confirm your slot and share payment details.</p>
+          <a href="#booking-form" class="booking-mobile-cta" data-nav>
+            <span>Fill the enquiry form below</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <div class="booking-info">
+            <div class="booking-info-item">
+              <span class="info-label">Session Duration</span>
+              <span class="info-value">90 minutes</span>
+            </div>
+            <div class="booking-info-item">
+              <span class="info-label">Format</span>
+              <span class="info-value">Video Call</span>
+            </div>
+            <div class="booking-info-item">
+              <span class="info-label">Starting From</span>
+              <span class="info-value olive-text">&#8377;7,777 / $121 USD</span>
+            </div>
+            <div class="booking-info-item">
+              <span class="info-label">Response Time</span>
+              <span class="info-value">Within 24 hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="booking-right">
+          <form id="booking-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="book-name">Full Name</label>
+                <input type="text" id="book-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="book-email">Email</label>
+                <input type="email" id="book-email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="book-phone">Phone Number</label>
+                <input type="tel" id="book-phone" name="phone" placeholder="+91 98765 43210" required />
+              </div>
+              <div class="form-group">
+                <label for="book-reason">Reason for Reading</label>
+                <select id="book-reason" name="reason" required>
+                  <option value="" disabled selected>Select a reason</option>
+                  <option>Love &amp; Relationships</option>
+                  <option>Career Guidance</option>
+                  <option>Spiritual Healing</option>
+                  <option>Life Direction</option>
+                  <option>General Reading</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="book-date">Preferred Date</label>
+                <input type="date" id="book-date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="book-time">Preferred Time</label>
+                <input type="time" id="book-time" name="time" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="book-message">Message (Optional)</label>
+              <textarea id="book-message" name="message" rows="4" placeholder="Anything specific you'd like guidance on..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+              <span>Send Enquiry &amp; Book Slot</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note">Your enquiry will be sent via email and WhatsApp for instant response.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTACT ════════════════════════════════════════ -->
+    <section id="contact">
+      <div class="section-container contact-layout">
+        <div class="contact-left">
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-title">Let's <em>connect</em></h2>
+        </div>
+        <div class="contact-links">
+          <a href="https://wa.me/917453895770" target="_blank" class="contact-link-item" data-reveal>
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>Chat directly</span>
+            </div>
+            <span class="contact-arrow">&rarr;</span>
+          </a>
+          <a href="https://instagram.com/tarotuniverse._" target="_blank" class="contact-link-item" data-reveal>
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <div>
+              <strong>Instagram</strong>
+              <span>Daily insights &amp; stories</span>
+            </div>
+            <span class="contact-arrow">&rarr;</span>
+          </a>
+          <a href="mailto:tarotuniverse.07@gmail.com" class="contact-link-item" data-reveal>
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <span>tarotuniverse.07@gmail.com</span>
+            </div>
+            <span class="contact-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═════════════════════════════════════════ -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-moon" id="footer-moon">
+          <div class="moon"></div>
+          <div class="moon-glow"></div>
+        </div>
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="footer-logo">tarotuniverse._<span class="gold"></span></span>
+            <p>Guiding souls through the wisdom of the cards.</p>
+          </div>
+          <div class="footer-nav">
+            <a href="#about" data-nav>About</a>
+            <a href="#services" data-nav>Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#process" data-nav>Process</a>
+            <a href="#testimonials" data-nav>Reviews</a>
+            <a href="#faq" data-nav>FAQ</a>
+            <a href="#booking" data-nav>Book a Reading</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Samiksha Tiwari. All rights reserved.</span>
+          <span>Crafted with intention.</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ═══ SUCCESS MODAL ═══════════════════════════════════ -->
+  <div id="success-modal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <div class="modal-icon">&#10003;</div>
+      <h3 id="modal-title">Enquiry Sent!</h3>
+      <p id="modal-text">Thank you. I'll confirm your slot within 24 hours via email and WhatsApp.</p>
+      <button class="btn-primary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
