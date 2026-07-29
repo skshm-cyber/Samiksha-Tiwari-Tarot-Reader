@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
   const WHATSAPP = '917453895770';
   const IG_HANDLE = 'tarotuniverse._';
+  const INSTAGRAM_RETURN_STATE = 'tarotuniverse.instagramBooking';
   const URGENT_FEE_INR = 100;
   const URGENT_FEE_USD = 4.44;
 
@@ -204,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeModal() {
     modal.classList.remove('open');
     document.body.style.overflow = '';
+    sessionStorage.removeItem(INSTAGRAM_RETURN_STATE);
   }
 
   function buildMessage() {
@@ -221,6 +223,61 @@ document.addEventListener('DOMContentLoaded', () => {
     msg += `\nName: ${userName}`;
     if (note) msg += `\nNote: ${note}`;
     return msg;
+  }
+
+  async function copyEnquiry(message) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(message);
+        return true;
+      } catch (error) {
+        // Fall back below for browsers that deny the Clipboard API.
+      }
+    }
+
+    const fallback = document.createElement('textarea');
+    fallback.value = message;
+    fallback.setAttribute('readonly', '');
+    fallback.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+    document.body.appendChild(fallback);
+    fallback.select();
+    const copied = document.execCommand('copy');
+    fallback.remove();
+    return copied;
+  }
+
+  function saveInstagramReturnState() {
+    const state = {
+      service: currentName,
+      inr: currentInr,
+      usd: currentUsd,
+      urgent,
+      name: nameInput.value,
+      note: noteInput.value,
+      scrollY: window.scrollY,
+    };
+    sessionStorage.setItem(INSTAGRAM_RETURN_STATE, JSON.stringify(state));
+  }
+
+  function restoreInstagramReturnState() {
+    const saved = sessionStorage.getItem(INSTAGRAM_RETURN_STATE);
+    if (!saved) return;
+
+    try {
+      const state = JSON.parse(saved);
+      if (!state.service) return;
+      openModal(state.service, state.inr, state.usd);
+      urgent = Boolean(state.urgent);
+      urgentToggle.setAttribute('aria-pressed', String(urgent));
+      updateTotal();
+      nameInput.value = state.name || '';
+      noteInput.value = state.note || '';
+      notice.textContent = 'Your enquiry is still copied and ready to paste in Instagram.';
+      notice.className = 'booking-notice success';
+      requestAnimationFrame(() => window.scrollTo(0, state.scrollY || 0));
+    } catch (error) {
+      sessionStorage.removeItem(INSTAGRAM_RETURN_STATE);
+    }
   }
 
   // Event listeners
@@ -258,18 +315,19 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const msg = buildMessage();
-    // Instagram does not allow websites to prefill a DM. Open its official
-    // message link immediately (before any async work) so mobile browsers do
-    // not treat it as a blocked pop-up, then copy the enquiry for the client
-    // to paste into the conversation.
-    window.open(`https://ig.me/m/${encodeURIComponent(IG_HANDLE)}`, '_blank', 'noopener');
-    navigator.clipboard.writeText(msg).then(() => {
-      notice.textContent = 'Instagram opened — your enquiry was copied. Paste it into the chat.';
-      notice.className = 'booking-notice success';
-      setTimeout(closeModal, 3500);
-    }).catch(() => {
-      notice.textContent = 'Instagram opened. Copy the enquiry details before sending your message.';
-      notice.className = 'booking-notice error';
+    // Instagram does not allow websites to prefill a DM. Its universal link
+    // opens the installed Instagram app on mobile devices. Save the modal
+    // state first so a visitor can return to the same completed enquiry.
+    notice.textContent = 'Copying your enquiry and opening Instagram…';
+    notice.className = 'booking-notice';
+
+    copyEnquiry(msg).then((copied) => {
+      saveInstagramReturnState();
+      window.location.assign(`https://ig.me/m/${encodeURIComponent(IG_HANDLE)}`);
+      notice.textContent = copied
+        ? 'Your enquiry is copied. Opening the Instagram app…'
+        : 'Opening Instagram. Please copy your enquiry details before sending your message.';
+      notice.className = copied ? 'booking-notice success' : 'booking-notice error';
     });
   });
 
@@ -283,4 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (name) openModal(name, inr, usd);
     });
   });
+
+  restoreInstagramReturnState();
 })();

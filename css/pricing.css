@@ -764,8 +764,26 @@ img { display: block; max-width: 100%; }
 .booking-instagram {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: #fff;
+  box-shadow: 0 8px 20px rgba(204, 35, 102, 0.2);
 }
-.booking-instagram:hover { opacity: 0.92; transform: translateY(-1px); }
+.booking-instagram:hover,
+.booking-instagram:focus-visible { opacity: 0.92; transform: translateY(-1px); }
+.booking-instagram:focus-visible {
+  outline: 3px solid rgba(204, 35, 102, 0.28);
+  outline-offset: 3px;
+}
+
+.booking-instagram-help {
+  margin: 0.8rem 0 0;
+  padding: 0.7rem 0.85rem;
+  border-left: 3px solid #dc2743;
+  border-radius: 0 10px 10px 0;
+  background: rgba(220, 39, 67, 0.07);
+  color: var(--charcoal-light);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.booking-instagram-help strong { color: var(--charcoal); }
 
 .booking-notice {
   text-align: center;
