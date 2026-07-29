@@ -258,13 +258,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const msg = buildMessage();
+    // Instagram does not allow websites to prefill a DM. Open its official
+    // message link immediately (before any async work) so mobile browsers do
+    // not treat it as a blocked pop-up, then copy the enquiry for the client
+    // to paste into the conversation.
+    window.open(`https://ig.me/m/${encodeURIComponent(IG_HANDLE)}`, '_blank', 'noopener');
     navigator.clipboard.writeText(msg).then(() => {
-      notice.textContent = 'Message copied! Opening Instagram...';
+      notice.textContent = 'Instagram opened — your enquiry was copied. Paste it into the chat.';
       notice.className = 'booking-notice success';
-      window.open(`https://www.instagram.com/direct/${IG_HANDLE}`, '_blank');
-      setTimeout(closeModal, 2500);
+      setTimeout(closeModal, 3500);
     }).catch(() => {
-      notice.textContent = 'Could not copy. Please copy the message manually.';
+      notice.textContent = 'Instagram opened. Copy the enquiry details before sending your message.';
       notice.className = 'booking-notice error';
     });
   });
