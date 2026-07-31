@@ -683,6 +683,7 @@ input, select, textarea { font: inherit; color: inherit; }
 }
 
 .service-card {
+  display: block;
   padding: 40px 32px;
   background: var(--white);
   border: 1px solid rgba(45, 43, 40, 0.06);
@@ -690,7 +691,9 @@ input, select, textarea { font: inherit; color: inherit; }
   transition: all 0.5s var(--ease-out-expo);
   position: relative;
   overflow: hidden;
-  cursor: default;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .service-card::before {
@@ -709,6 +712,10 @@ input, select, textarea { font: inherit; color: inherit; }
 }
 
 .service-card:hover::before { opacity: 1; }
+.service-card:focus-visible {
+  outline: 3px solid var(--olive);
+  outline-offset: 4px;
+}
 
 .service-icon {
   color: var(--olive);
@@ -747,20 +754,36 @@ input, select, textarea { font: inherit; color: inherit; }
   z-index: 1;
 }
 
+.service-offer {
+  display: block;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(45, 43, 40, 0.08);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--tan);
+  position: relative;
+  z-index: 1;
+}
+.service-offer strong { color: var(--olive); font-weight: 600; }
+
 .service-arrow {
   position: absolute;
   bottom: 24px;
   right: 24px;
-  font-size: 1.2rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--olive);
-  opacity: 0;
-  transform: translateX(-10px);
+  opacity: 0.55;
+  transform: translateX(0);
   transition: all 0.4s var(--ease-out-expo);
   z-index: 1;
 }
 .service-card:hover .service-arrow {
-  opacity: 0.6;
-  transform: translateX(0);
+  opacity: 1;
+  transform: translateX(4px);
 }
 
 /* ═══ ABOUT ══════════════════════════════════════════════ */
@@ -1605,6 +1628,7 @@ input, select, textarea { font: inherit; color: inherit; }
 /* ═══ RESPONSIVE ═════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .hero-inner { flex-direction: column; gap: 48px; text-align: center; }
+  .hero-left, .hero-right { flex: none; width: 100%; }
   .hero-left { order: 1; }
   .hero-right { order: 2; }
   .hero-text { margin-left: auto; margin-right: auto; }
@@ -1702,14 +1726,23 @@ input, select, textarea { font: inherit; color: inherit; }
     50% { transform: translateY(4px); }
   }
 
+  #hero { min-height: 100svh; align-items: flex-start; }
+  .hero-inner { padding: 120px 24px 52px; gap: 40px; }
+  .hero-left { display: flex; flex-direction: column; align-items: center; }
+  .hero-title { margin-bottom: 20px; }
   .h-line { font-size: clamp(2rem, 9vw, 3rem); }
-  .hero-text { font-size: 0.88rem; max-width: 340px; margin-left: auto; margin-right: auto; }
+  .hero-text { position: relative; z-index: 3; font-size: 0.88rem; max-width: 340px; margin: 0 auto; }
   .hero-label { font-size: 0.6rem; margin-bottom: 20px; }
 
-  .tarot-composition { max-width: 240px; }
-  .tarot-card { width: 85px; height: 130px; }
+  .hero-right { margin-top: 8px; z-index: 1; }
+  .tarot-composition { max-width: 220px; }
+  .tarot-card { width: 78px; height: 120px; }
+  .hero-scroll-indicator { display: none; }
 
   .services-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 0; padding: 32px 28px 54px; }
+  .service-offer { margin-top: 14px; }
+  .service-arrow { bottom: 22px; right: 28px; }
   .form-row { flex-direction: column; gap: 0; }
   .footer-nav { flex-wrap: wrap; gap: 16px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
@@ -1737,4 +1770,11 @@ input, select, textarea { font: inherit; color: inherit; }
   .nav-inner { padding: 0 14px; }
   .nav-mobile-ctas { margin-right: 10px; }
   .nav-mobile-btn { padding: 7px 11px; }
+  .hero-text { max-width: 280px; font-size: 0.82rem; line-height: 1.7; }
+  .h-line { font-size: clamp(1.6rem, 8vw, 2.4rem); }
+  .hero-inner { padding: 90px 16px 48px; gap: 24px; }
+  .tarot-composition { max-width: 180px; }
+  .tarot-card { width: 64px; height: 100px; }
+  .card-num { font-size: 1.4rem; }
+  .card-name { font-size: 0.6rem; }
 }
