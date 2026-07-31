@@ -1778,3 +1778,58 @@ input, select, textarea { font: inherit; color: inherit; }
   .card-num { font-size: 1.4rem; }
   .card-name { font-size: 0.6rem; }
 }
+
+/* ═══ SKIP LINK ═══════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 12px 24px;
+  background: var(--olive);
+  color: var(--cream);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0 0 12px 12px;
+  transition: top 0.3s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ═══ FOCUS STYLES ════════════════════════════════════════ */
+*:focus-visible {
+  outline: 3px solid var(--olive);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--olive);
+  outline-offset: 3px;
+}
+
+/* ═══ PREFERS REDUCED MOTION ══════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .testimonials-track {
+    animation: none !important;
+  }
+
+  .intro-particle,
+  .moon-particle {
+    animation: none !important;
+  }
+
+  .scroll-line::after,
+  .hero-scroll-line::after {
+    animation: none !important;
+  }
+}
