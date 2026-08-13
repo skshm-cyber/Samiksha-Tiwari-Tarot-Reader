@@ -259,7 +259,7 @@
       cy = vh * 0.36;
     } else {
       cx = vw / 2;
-      cy = Math.min(vh * 0.14, 110) + h / 2;
+      cy = Math.min(vh * 0.12, 80) + h / 2;
     }
     return { left: cx - w / 2, top: cy - h / 2, cx, cy };
   }

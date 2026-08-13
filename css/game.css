@@ -718,7 +718,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 
 /* ═══ RESPONSIVE ══════════════════════════════════════════ */
 @media (max-width: 899px) {
-  :root { --dd-card-w: clamp(150px, 42vw, 175px); }
+  :root { --dd-card-w: clamp(125px, 34vw, 150px); }
   .dd-scene { padding-top: 104px; }
   .dd-moon-glow { top: 4vh; right: 4vw; width: 220px; height: 220px; }
   .dd-moon-disc { width: 42px; height: 42px; }
@@ -726,12 +726,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   .dd-reading-text { font-size: 0.92rem; line-height: 1.85; }
   .dd-scene.dd-revealed .dd-heading,
   .dd-scene.dd-revealed .dd-deck-zone { display: none; }
-  .dd-scene.dd-revealed { justify-content: flex-start; }
+  .dd-scene.dd-revealed { justify-content: flex-start; padding-top: 0; }
   .dd-scene.dd-revealed .dd-panel { margin-top: calc(var(--dd-reveal-top) + var(--dd-card-h) + 1.25rem); }
   .dd-actions { flex-direction: column; }
   .dd-actions .dd-btn-primary, .dd-actions .dd-btn-ghost { width: min(100%, 320px); }
   .dd-deck-shadow { bottom: -20px; }
   .dd-hint { margin-top: 36px; }
+  .dd-share-row { flex-direction: row; padding: 16px 0 20px; }
+  .dd-share { flex: 1; justify-content: center; padding: 9px 12px; }
+  .dd-disclaimer { margin-bottom: 20px; }
+}
+
+@media (max-width: 899px) and (max-height: 700px) {
+  .dd-reading-text { font-size: 0.86rem; line-height: 1.75; }
+  .dd-disclaimer { font-size: 0.64rem; }
+  .dd-share-row { padding: 12px 0 16px; }
 }
 
 @media (max-width: 480px) {
@@ -739,8 +748,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   .dd-nav-links { gap: 20px; }
   .dd-sub { font-size: 0.88rem; margin-bottom: 34px; }
   .dd-hint { margin-top: 30px; font-size: 0.66rem; }
-  .dd-share-row { flex-direction: column; align-items: center; }
-  .dd-share { width: min(100%, 300px); justify-content: center; }
 }
 
 /* ═══ EXIT STATE ══════════════════════════════════════════ */
