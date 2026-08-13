@@ -239,6 +239,9 @@
   }
 
   function fillPanel(card) {
+    if (!card.reading) {
+      console.error('[daily-draw] missing general reading for card: ' + card.id);
+    }
     els.readingNum.textContent = card.num;
     els.readingName.textContent = card.name;
     els.readingKeywords.textContent = card.keywords;
@@ -367,6 +370,7 @@
 
     els.panel.hidden = false;
     els.readingBody.hidden = false;
+    gsap.set(els.readingBody, { autoAlpha: 1, y: 0 });
     gsap.fromTo(els.panel,
       { autoAlpha: 0, y: 20 },
       { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.05 }
