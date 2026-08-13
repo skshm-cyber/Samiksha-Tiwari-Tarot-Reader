@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Draw — tarotuniverse._</title>
+  <meta name="description" content="The Daily Draw — a quiet moment with the cards. Touch the deck, draw a card, and receive a general reading for reflection." />
+  <meta name="theme-color" content="#4A5240" />
+  <meta property="og:title" content="The Daily Draw — tarotuniverse._" />
+  <meta property="og:description" content="A card is waiting for you. Touch the deck and draw a card." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://skshm-cyber.github.io/Samiksha-Tiwari-Tarot-Reader/Samiksha%20Tiwari%20Tarot%20Reader.jpeg" />
+  <meta property="og:site_name" content="Samiksha Tiwari Tarot Reader" />
+  <link rel="icon" type="image/jpeg" href="Samiksha%20Tiwari%20Tarot%20Reader.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/game.css" />
+</head>
+<body class="dd-page">
+
+  <a href="#dd-stage" class="skip-link">Skip to the Daily Draw</a>
+
+  <!-- ═══ NAVIGATION ═══════════════════════════════════════ -->
+  <nav id="dd-nav" aria-label="Main navigation">
+    <div class="dd-nav-inner">
+      <a href="index.html" class="dd-nav-logo">tarotuniverse._<span class="gold"></span></a>
+      <div class="dd-nav-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="dd-stage">
+
+    <!-- ═══ ATMOSPHERE ═════════════════════════════════════ -->
+    <div class="dd-atmosphere" aria-hidden="true">
+      <div class="dd-sky"></div>
+      <div class="dd-moon-glow">
+        <div class="dd-moon-disc"></div>
+      </div>
+      <div class="dd-mist dd-mist-1"></div>
+      <div class="dd-mist dd-mist-2"></div>
+      <div class="dd-mist dd-mist-3"></div>
+      <div class="dd-mist dd-mist-4"></div>
+      <div class="dd-warm-glow"></div>
+      <div class="dd-light-lift"></div>
+      <div class="dd-dim"></div>
+      <div class="dd-particle-field" id="dd-particles"></div>
+      <div class="dd-vignette"></div>
+      <div class="dd-sweep"></div>
+    </div>
+
+    <div class="dd-scene" id="dd-scene">
+
+      <!-- ═══ HEADING ═══════════════════════════════════════ -->
+      <header class="dd-heading" id="dd-heading">
+        <p class="dd-label">The Daily Draw</p>
+        <h1 class="dd-title" id="dd-title">A card is waiting<br /><em>for you.</em></h1>
+        <p class="dd-sub" id="dd-sub">Take a moment.<br />Think about a question.<br />Then touch the deck.</p>
+      </header>
+
+      <!-- ═══ DECK ══════════════════════════════════════════ -->
+      <div class="dd-deck-zone" id="dd-deck-zone">
+        <div class="dd-deck-glow"></div>
+        <div class="dd-deck-shadow"></div>
+        <div class="dd-deck" id="dd-deck" style="perspective:900px;">
+          <button class="dd-card dd-card-top" id="dd-top-card" type="button"
+                  aria-label="Touch the deck to draw a card" aria-pressed="false">
+            <span class="dd-card-inner" id="dd-card-inner">
+              <span class="dd-card-back">
+                <span class="dd-back-design">
+                  <svg class="dd-back-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                  <i class="dd-back-star" style="left:20%;top:22%;"></i>
+                  <i class="dd-back-star" style="left:76%;top:18%;"></i>
+                  <i class="dd-back-star" style="left:82%;top:64%;"></i>
+                  <i class="dd-back-star" style="left:16%;top:68%;"></i>
+                  <i class="dd-back-star" style="left:46%;top:10%;"></i>
+                </span>
+              </span>
+              <span class="dd-card-front">
+                <span class="dd-front-num" id="dd-front-num">0</span>
+                <span class="dd-front-emblem" id="dd-front-emblem"></span>
+                <span class="dd-front-name" id="dd-front-name">The Fool</span>
+                <span class="dd-front-corner" id="dd-front-corner">0</span>
+              </span>
+            </span>
+          </button>
+        </div>
+        <p class="dd-hint" id="dd-hint">Touch the deck</p>
+      </div>
+
+      <!-- ═══ READING PANEL ═════════════════════════════════ -->
+      <section class="dd-panel" id="dd-panel" aria-live="polite" hidden>
+
+        <div class="dd-reading-body" id="dd-reading-body">
+          <p class="dd-reading-num" id="dd-reading-num" data-reveal></p>
+          <h2 class="dd-reading-name" id="dd-reading-name" tabindex="-1" data-reveal></h2>
+          <p class="dd-reading-keywords" id="dd-reading-keywords" data-reveal></p>
+          <p class="dd-reading-text" id="dd-reading-text" data-reveal></p>
+          <p class="dd-disclaimer" data-reveal>General reading for entertainment and self-reflection. For a personalised reading, explore a private session.</p>
+          <div class="dd-actions dd-reading-cta" data-reveal>
+            <button class="dd-btn-primary" id="dd-book-reading" type="button">Book a Personal Reading</button>
+          </div>
+        </div>
+
+        <div class="dd-share-row" id="dd-share-row" data-reveal>
+          <button class="dd-share" id="dd-share-wa" type="button">Share Your Card</button>
+          <button class="dd-share" id="dd-share-link" type="button">Copy Link</button>
+        </div>
+
+        <div class="dd-block dd-reflect" id="dd-reflect" hidden>
+          <h3>Something <em>resonated?</em></h3>
+          <p>Explore what a personal reading could reveal about your situation.</p>
+          <div class="dd-actions">
+            <button class="dd-btn-primary" id="dd-go-pricing" type="button">Book a Personal Reading</button>
+            <button class="dd-btn-ghost" id="dd-again" type="button">Draw Again</button>
+          </div>
+        </div>
+
+        <div class="dd-block dd-hesitate" id="dd-hesitate" hidden>
+          <h3>Are you sure?</h3>
+          <p class="dd-hesitate-line">Sometimes the first card is the one we need to hear.</p>
+          <div class="dd-actions">
+            <button class="dd-btn-primary" id="dd-keep" type="button">Keep My Card</button>
+            <button class="dd-btn-ghost" id="dd-confirm" type="button">Draw Again</button>
+          </div>
+        </div>
+
+        <div class="dd-block dd-reflect" id="dd-reflect-2" hidden>
+          <h3>Two cards.<br /><em>One question.</em></h3>
+          <p>If you're looking for guidance around something personal, a private reading can explore your situation in greater depth.</p>
+          <div class="dd-actions">
+            <button class="dd-btn-primary" id="dd-go-pricing-2" type="button">Book a Personal Reading</button>
+            <button class="dd-btn-ghost" id="dd-again-2" type="button">Draw Again</button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <div class="dd-toast" id="dd-toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="js/game.js" defer></script>
+</body>
+</html>
