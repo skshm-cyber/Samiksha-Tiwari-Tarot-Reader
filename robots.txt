@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samiksha-tiwari-tarot-reader.pages.dev/sitemap.xml
+Sitemap: https://skshm-cyber.github.io/Samiksha-Tiwari-Tarot-Reader/sitemap.xml
